@@ -14,6 +14,9 @@ else
     <head><title>BillPage</title></head>
     <body>
         <div id="div5">
+            <div class="menu">
+                <?php include 'nav.php';?>
+            </div>
             <div id="div6">
                 <h2>Dairy Management System</h2>
             </div>

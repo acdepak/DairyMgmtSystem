@@ -1,5 +1,13 @@
 <?php
+session_start();
+if(isset($_SESSION["islogin"]))
+    {
 
+    }
+else
+    {
+        header("location:2-category.php");
+    }
 ?>
 
 <html>
@@ -8,6 +16,9 @@
     </head>
     <body>
         <div id="cat1">
+            <div class="menu">
+                <?php include 'nav.php';?>
+            </div>
             <h3>Manage Category</h3>
             <div id="cat2">
                 <div id="cat3">

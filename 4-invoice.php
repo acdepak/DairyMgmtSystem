@@ -1,5 +1,13 @@
 <?php
+session_start();
+if(isset($_SESSION["islogin"]))
+    {
 
+    }
+else
+    {
+        header("location:4-invoice.php");
+    }
 ?>
 
 <html>
@@ -8,6 +16,9 @@
     </head>
     <body>
         <div id="inv1">
+            <div class="menu">
+                <?php include 'nav.php';?>
+            </div>
             <h2>Invoice</h2>
             <div id="inv2">
                 <div id="inv3">
