@@ -36,9 +36,10 @@
                     <ul class="topnav">
                     <div class="rnav">
                             <li><a href="#home">Home</a></li>
-                            <li><a href="#category">Category</a></li>
-                            <li><a href="#invoice">Invoice</a></li>
-                            <li><a href="#bill">Bill</a></li>
+                            <li><a href="<?php echo '2-category.php';?>">Category</a></li>
+                            <li><a href="<?php echo '4-invoice.php';?>">Invoice</a></li>
+                            <li><a href="<?php echo '3-bill.php';?>">Bill</a></li> 
+                            <!-- not working. See for php page redirecting in list -->
                         </div>
                         <div class="lnav">
                             <li><a href="#profile">Profile</a></li>
