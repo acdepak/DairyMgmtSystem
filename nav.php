@@ -39,7 +39,7 @@
                             <li><a href="<?php echo '2-category.php';?>">Category</a></li>
                             <li><a href="<?php echo '4-invoice.php';?>">Invoice</a></li>
                             <li><a href="<?php echo '3-bill.php';?>">Bill</a></li> 
-                            <!-- not working. See for php page redirecting in list -->
+                            <!--  Current page detection and changing color in it's name -->
                         </div>
                         <div class="lnav">
                             <li><a href="#profile">Profile</a></li>

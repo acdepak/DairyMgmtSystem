@@ -6,7 +6,7 @@ if(isset($_SESSION["islogin"]))
     }
 else
     {
-        header("location:3-bill.php");
+        header("location:1-login.php");
     }
 ?>
 
