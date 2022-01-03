@@ -34,17 +34,16 @@
             <div class="a">
                 <div class="navbar">
                     <ul class="topnav">
-                        <div class="lnav">
-                            <li><a href="#profile">Profile</a></li>
-                            <li><a href="#search">Search</a></li>
-                        </div>
-                        <div class="rnav">
+                    <div class="rnav">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#category">Category</a></li>
                             <li><a href="#invoice">Invoice</a></li>
                             <li><a href="#bill">Bill</a></li>
                         </div>
-                        
+                        <div class="lnav">
+                            <li><a href="#profile">Profile</a></li>
+                            <li><a href="#search">Search</a></li>
+                        </div>
                         
                     </ul>
             </div>
