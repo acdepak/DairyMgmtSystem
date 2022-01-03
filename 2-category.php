@@ -8,6 +8,48 @@ else
     {
         header("location:1-login.php");
     }
+
+
+    $tbl="<table border=1>
+            <tr>
+                <td>S.N.</td>
+                <td>Categories</td>
+                <td>Quantity</td>
+                <td>Unit</td>
+                <td>Rate</td>
+                <td>Action</td>
+            </tr>";
+
+    $conn=mysqli_connect("localhost","root","","dairymgmtsystem");
+    if(!$conn)
+        {
+            die("Error occured in connecting to database");
+            return;
+        }
+    $query="select * from category";
+    $result=mysqli_query($conn,$query);
+    if (mysqli_num_rows($result)>0)
+    {
+        while($row=mysqli_fetch_assoc($result))
+        {
+            $id=$row['S.N.'];
+            $category=$row['Categories'];
+            $quantity=$row['Quantity'];
+            $unit=$row['Unit'];
+            $rate=$row['Rate'];
+            $action=$row['Action'];
+            $tbl=$tbl."<tr>
+                            <td>$id</td>
+                            <td>$category</td>
+                            <td>$quantity</td
+                            <td>$unit</td>
+                            <td>$rate</td>
+                            <td>$action</td>
+                        </tr>";
+        }
+        $tbl=$tbl."</table>";
+    }
+
 ?>
 
 <html>
@@ -22,29 +64,17 @@ else
             <h3>Manage Category</h3>
             <div id="cat2">
                 <div id="cat3">
-                    <table id="table1">
-                        <tr>
-                            <th>#</th>
-                            <th>Categories</th>
-                            <th>Quantity</th>
-                            <th>Unit</th>
-                            <th>Rate</th>
-                            <th>Action</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Milk</td>
-                            <td>5</td>
-                            <td>l</td>
-                            <td>50</td>
-                            <td>Edit Delete</td>
-                        </tr>
-                    </table>
-
-                    <div id="cat4">
-                        Insert Update Delete
-                    </div>
+                    <?php echo $tbl;?>
                 </div>
+                <div id="divInsert">
+                        <p></p>
+                        <form action="2-category.php" method="post">
+                            <button type="submit" formaction="insert.php">Insert Category
+                                </button>
+                        </form>
+                        <!-- < ?php include 'insert.php';?> -->
+                         Update Delete
+                    </div>
             </div>
         </div>
     </body>
