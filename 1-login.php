@@ -17,7 +17,7 @@ if(isset($_POST["loginbtn"]))
 <html>
     <head>
         <title>Login Page</title>
-        <link rel="stylesheet" href="./1-login.css" />
+        <link rel="stylesheet" href="./style/1-login.css" />
     </head>
     <body>
         <div id="div1">
