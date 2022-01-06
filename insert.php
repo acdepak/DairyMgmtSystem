@@ -1,4 +1,13 @@
 <?php
+session_start();
+if(isset($_SESSION["islogin"]))
+    {
+
+    }
+else
+    {
+        header("location:1-login.php");
+    }
     $sn="";
     $category="";
     $quantity="";
