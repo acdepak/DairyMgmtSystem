@@ -9,13 +9,30 @@ else
         header("location:1-login.php");
     }
 
+    $conn=mysqli_connect("localhost","root","","dairymgmtsystem");
+    if(!$conn)
+        {
+            die("Error occured in connecting to database");
+            return;
+        }
+    $query="select * from category";
+    $result=mysqli_query($conn,$query);
+    if (mysqli_num_rows($result)>0)
+    {
+        while($row=mysqli_fetch_assoc($result))
+        {
+            
+            $product=$row['Categories'];
+            $unit=$row['Unit'];
+            $rate=$row['Rate'];
+        }
+    }
+    $price="  !!! how to price";
+
     $sn="";
     $date=date("Y-m-d");
     $name="";
-    $product="";
     $quantity="";
-    $rate="";
-    $price="";
     $uname="";
     if(isset($_POST["btninsert"]))
     {
@@ -65,13 +82,13 @@ else
                 <div id="div8">
                     <form>
                         Date : <input type="text" name="date" value="<?php echo $date; ?>"><br>
-                        Customer name: <input type="text" name="name" value="<?php echo $name; ?>placeholder="Name"><br>
-                        Product: <input type="text" name="product" placeholder="Milk, Ghee..."><br>
+                        Customer name: <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Name"><br>
+                        Product: <input type="text" name="product" value="<?php echo $product; ?>"><br>
                         Quantity: <input type="number" name="qty" value="<?php echo $quantity; ?>">
-                         Unit                      <br>
+                         Unit: <input name="unit" value="<?php echo $unit; ?>"><br>
                         <!-- Unit of quantity, rate, Date and Price should be automated  -->
-                        Rate:    <br>
-                        Price:   <br>
+                        Rate: <input type="text" name="rate" value="<?php echo $rate; ?>"><br>
+                        Price: <input type="text" name="price" value="<?php echo ($price); ?>"><br>
                         User: <input type="text" name="user" value="<?php echo $uname; ?>" placeholder="Username">
 
                     </form>
