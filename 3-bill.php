@@ -81,14 +81,14 @@ else
                     <h3>Billing</h3>
                 <div id="div8">
                     <form>
-                        Date : <input type="text" name="date" value="<?php echo $date; ?>"><br>
+                        Date : <input disabled name="date" value="<?php echo $date; ?>"><br>
                         Customer name: <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Name"><br>
-                        Product: <input type="text" name="product" value="<?php echo $product; ?>"><br>
+                        Product: <input disabled name="product" value="<?php echo $product; ?>"><br>
                         Quantity: <input type="number" name="qty" value="<?php echo $quantity; ?>">
-                         Unit: <input name="unit" value="<?php echo $unit; ?>"><br>
+                         Unit: <input disabled name="unit" value="<?php echo $unit; ?>"><br>
                         <!-- Unit of quantity, rate, Date and Price should be automated  -->
-                        Rate: <input type="text" name="rate" value="<?php echo $rate; ?>"><br>
-                        Price: <input type="text" name="price" value="<?php echo ($price); ?>"><br>
+                        Rate: <input disabled name="rate" value="<?php echo $rate; ?>"><br>
+                        Price: <input disabled name="price" value="<?php echo ($price); ?>"><br>
                         User: <input type="text" name="user" value="<?php echo $uname; ?>" placeholder="Username">
 
                     </form>
