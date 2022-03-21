@@ -35,7 +35,7 @@
                 <div class="navbar">
                     <ul class="topnav">
                     <div class="rnav">
-                            <li><a href="#home">Home</a></li>
+                            <li><a href="<?php echo '1-dashboard.php';?>">Dashboard</a></li>
                             <li><a href="<?php echo '2-category.php';?>">Category</a></li>
                             <li><a href="<?php echo '4-invoice.php';?>">Invoice</a></li>
                             <li><a href="<?php echo '3-bill.php';?>">Bill</a></li> 

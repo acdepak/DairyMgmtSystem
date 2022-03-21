@@ -33,6 +33,7 @@ else
                             <th>Price</th>
                             
                         </tr>
+                        <!-- https://www.c-sharpcorner.com/UploadFile/051e29/dropdown-list-in-php/ -->
                         <tr>
                             <td>pull #</td>
                             <td>pull date</td>
