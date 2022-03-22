@@ -35,7 +35,7 @@
                 <div class="navbar">
                     <ul class="topnav">
                     <div class="rnav">
-                            <li><a href="<?php echo '1-dashboard.php';?>">Dashboard</a></li>
+                            <li><a href="<?php echo 'index.php';?>">Dashboard</a></li>
                             <li><a href="<?php echo '2-category.php';?>">Category</a></li>
                             <li><a href="<?php echo '4-invoice.php';?>">Invoice</a></li>
                             <li><a href="<?php echo '3-bill.php';?>">Bill</a></li> 
@@ -43,11 +43,8 @@
                         </div>
                         <div class="lnav">
                             <li><a href="#profile">Profile</a></li>
-                            <li><a href="#search">Search</a></li>
+                            <li><a href="./logout.php">Logout</a></li>
                         </div>
-                        
                     </ul>
             </div>
         </div>
-       <!-- </body>
-</html> -->

@@ -6,10 +6,11 @@ if(isset($_SESSION["islogin"]))
     }
 else
     {
-        header("location:1-login.php");
+        header("location:0-login.php");
     }
 ?>
 
+<!DOCTYPE html>
 <html>
     <head>
         <title>invoices</title>

@@ -1,0 +1,19 @@
+#div6,
+#div7 h3 {
+  text-align: center;
+}
+
+.inputfield {
+  text-align: center;
+}
+
+.inputfield input {
+  padding: 3px;
+  margin: 2px;
+}
+
+.inputfield label {
+  width: 150px;
+  display: inline-block;
+  text-align: left;
+}

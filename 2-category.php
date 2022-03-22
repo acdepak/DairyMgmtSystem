@@ -1,69 +1,64 @@
 <?php
-session_start();
-if(isset($_SESSION["islogin"]))
-    {
-
-    }
-else
-    {
-        header("location:1-login.php");
-    }
+$username="root";
+$password="";
+$host="localhost";
+$db_name="dairymgmtsystem";
 
 
-    $tbl="<table border=1>
-            <tr>
-                <td>S.N.</td>
-                <td>Categories</td>
-                <td>Quantity</td>
-                <td>Unit</td>
-                <td>Rate</td>
-            </tr>";
+$mysqli=new mysqli($host,$username,$password,$db_name);
 
-    $conn=mysqli_connect("localhost","root","","dairymgmtsystem");
-    if(!$conn)
-        {
-            die("Error occured in connecting to database");
-            return;
-        }
-    $query="select * from category";
-    $result=mysqli_query($conn,$query);
-    if (mysqli_num_rows($result)>0)
-    {
-        while($row=mysqli_fetch_assoc($result))
-        {
-            $id=$row['S.N.'];
-            $category=$row['Categories'];
-            $quantity=$row['Quantity'];
-            $unit=$row['Rate'];
-            $rate=$row['Unit'];
-            $tbl=$tbl."<tr><td>$id</td>
-                            <td>$category</td>
-                            <td>$quantity</td
-                            <td>$unit</td>
-                            <td>$rate</td>
-                        </tr>";
-        }
-        $tbl=$tbl."</table>";
-    }
+if ($mysqli->connect_error) {
+  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+}
+
+$sql = "SELECT * FROM category";
+$result = $mysqli->query($sql);
+$mysqli->close();
+
 
 ?>
 
-<html>
-    <head>
-        <title>Categories</title>
-        <link rel="stylesheet" href="./style/2-category.css" />
-    </head>
-    <body>
-        <div class="menu">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category2</title>
+    <link rel="stylesheet" href="./style/2-category.css">
+</head>
+<body>
+<div class="menu">
             <?php include 'nav.php';?>
         </div>
-        <div id="cat1">
-            <h3>Manage Category</h3>
-            <div id="cat2">
-                <div id="cat3">
-                    <?php echo $tbl;?>
-                </div>
-                <div id="divInsert">
+    <div class="container" style=" display: flex; justify-content: center; ">
+    <div>
+        <table class="tbl1">
+            <tr>
+                <th>SN</th>
+                <th>Categories</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Rate</th>
+                </tr>
+
+                <?php while($row=$result->fetch_assoc()) {
+
+                ?><tr>
+                <td><?php echo $row['S.N.']; ?></td>
+                <td><?php echo $row['Categories']; ?></td>
+                <td><?php echo $row['Quantity']; ?></td>
+                <td><?php echo $row['Unit']; ?></td>
+                <td><?php echo $row['Rate']; ?></td>
+                </tr>
+                <?php 
+            } 
+            ?>
+            </table>
+        </div>
+        <div id="divInsert" style="display: block">
                     <p></p>
                     <form action="2-category.php" method="post">
                         <button type="submit" formaction="insert.php">Insert Category
@@ -72,7 +67,7 @@ else
                     <!-- < ?php include 'insert.php';?> -->
                         Update Delete
                 </div>
-            </div>
-        </div>
-    </body>
+                </div>
+    
+</body>
 </html>

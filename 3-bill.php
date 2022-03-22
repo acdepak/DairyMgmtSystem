@@ -6,7 +6,7 @@ if(isset($_SESSION["islogin"]))
     }
 else
     {
-        header("location:1-login.php");
+        header("location:0-login.php");
     }
 
     $conn=mysqli_connect("localhost","root","","dairymgmtsystem");
@@ -66,8 +66,10 @@ else
     }
 ?>
 
+<!DOCTYPE html>
 <html>
     <head><title>BillPage</title></head>
+    <link rel="stylesheet" href="./style/bill.css"
     <body>
         <div id="div5">
             <div class="menu">
@@ -79,21 +81,20 @@ else
             <div id="div7">
                 <div>
                     <h3>Billing</h3>
-                <div id="div8">
-                    <form>
-                        Date : <input disabled name="date" value="<?php echo $date; ?>"><br>
-                        Customer name: <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Name"><br>
-                        Product: <input disabled name="product" value="<?php echo $product; ?>"><br>
-                        Quantity: <input type="number" name="qty" value="<?php echo $quantity; ?>">
-                         Unit: <input disabled name="unit" value="<?php echo $unit; ?>"><br>
-                        <!-- Unit of quantity, rate, Date and Price should be automated  -->
-                        Rate: <input disabled name="rate" value="<?php echo $rate; ?>"><br>
-                        Price: <input disabled name="price" value="<?php echo ($price); ?>"><br>
-                        User: <input type="text" name="user" value="<?php echo $uname; ?>" placeholder="Username">
-
-                    </form>
                 </div>
+                    <div id="div8">
+                        <form class='inputfield'>
+                            <label>Date :</label><input style="border:hidden;" disabled name="date" value="<?php echo $date; ?>"><br>
+                            <label>Customer name: </label><input syle=""type="text" name="name" value="<?php echo $name; ?>" placeholder="Name..."><br>
+                            <label>Product: </label><input disabled name="product" value="<?php echo $product; ?>"><br>
+                            <label>Quantity: </label><input type="number" name="qty" value="<?php echo $quantity; ?>"><br>
+                            <label>Unit: </label><input style="border:none;"disabled name="unit" value="<?php echo $unit; ?>"><br>
+                            <!-- Unit of quantity, rate, Date and Price should be automated  -->
+                            <label>Rate: </label><input disabled name="rate" value="<?php echo $rate; ?>"><br>
+                            <label>Price: </label><input disabled name="price" value="<?php echo ($price); ?>"><br>
+                            <label>User: </label><input type="text" name="user" value="<?php echo $uname; ?>" placeholder="Username...">
+                        </form>
+                    </div>
             </div>
-        </div>
     </body>
 </html>

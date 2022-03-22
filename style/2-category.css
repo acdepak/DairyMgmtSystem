@@ -1,22 +1,4 @@
-/* div.menu {
-  
-  nav's division
-} */
-
-#cat1 {
-  /* background-color: aqua; */
-  text-align: center;
-}
-/* #cat2 {
-  background-color: rgb(32, 223, 80);
-} */
-#cat3 {
-  /* background-color: rgb(250, 54, 240); */
-  position: relative;
-  /* top: 10px; */
-  left: 40%;
-  width: 80%;
-}
-#divInsert {
-  /* background-color: rgb(0, 17, 255); */
+.container {
+  height: 80vh;
+  display: center;
 }

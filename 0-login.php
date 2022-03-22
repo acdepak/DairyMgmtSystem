@@ -5,7 +5,7 @@ if(isset($_POST["loginbtn"]))
     if($_POST["username"]=="admin" && $_POST["password1"]=="password")
     {
         $_SESSION["islogin"]=true;
-        header("location:3-bill.php");
+        header("location:index.php");
     }
     else
     {
@@ -14,10 +14,11 @@ if(isset($_POST["loginbtn"]))
 }
 ?>
 
+<!DOCTYPE html>
 <html>
     <head>
         <title>Login Page</title>
-        <link rel="stylesheet" href="./style/1-login.css" />
+        <link rel="stylesheet" href="./style/0-login.css" />
     </head>
     <body>
         <div id="div1">
@@ -28,7 +29,7 @@ if(isset($_POST["loginbtn"]))
             <div id="div3">
                     <h3>Login</h3>
                 <div id="div4">
-                    <form action="1-login.php" method="post">
+                    <form action="0-login.php" method="post">
                         <p><input type="text" name="username" placeholder="Username"></p>
                         <p><input type="password" name="password1" placeholder="Password"></p>
                         <input type="submit" name="loginbtn" value="Login">
