@@ -1,0 +1,35 @@
+#insert {
+  text-align: center;
+}
+form {
+  margin-top: 100px;
+}
+form input {
+  margin-top: 3px;
+  margin-left: 0px;
+  padding: 8px;
+}
+form label {
+  width: 80px;
+  display: inline-block;
+  text-align: left;
+  font-family: Verdana, Arial, Helvet;
+}
+.btn {
+  border: none;
+  color: #000000;
+  padding: 8px 8px;
+  text-decoration: none;
+  font-family: Verdana, Arial, Helvet;
+  font-size: 16px;
+  cursor: pointer;
+}
+#insert .btn {
+  background-color: #85f324;
+}
+.btn #upd {
+  background-color: #f0d355;
+}
+.btn #del {
+  background-color: #f15f8b;
+}
