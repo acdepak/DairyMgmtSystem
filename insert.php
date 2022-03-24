@@ -43,16 +43,22 @@ else
             }
     }
 ?>
+
+<script>
+    label{
+        padding: 8px;
+    }
+</script>
+
 <div class="menu">
                 <?php include 'nav.php';?>
             </div>
 <div id="insert">
     <form action="insert.php" method="post">
-        S.N.<br>
-        Category: <input type="text" name="tcata" value="<?php echo $category; ?>"><br>
-        Quantity: <input type="text" name="tquan" value="<?php echo $quantity; ?>"><br>
-        Unit: <input type="text" name="tunit" value="<?php echo $unit;?>"><br>
-        Rate: <input type="text" name="trate" value="<?php echo $rate;?>"><br>
-        Action: <input type="text" name="tact" value="<?php echo $action;?>"><br>
+        <label>Category: <input type="text" name="tcata" value="<?php echo $category; ?>"></label><br>
+        <label>Quantity: <input type="text" name="tquan" value="<?php echo $quantity; ?>"></label><br>
+        <label>Unit: <input type="text" name="tunit" value="<?php echo $unit;?>"></label><br>
+        <label>Rate: <input type="text" name="trate" value="<?php echo $rate;?>"></label><br>
+        <label>Action: <input type="text" name="tact" value="<?php echo $action;?>"></label><br>
         <input type="submit" name="btninsert" value="Insert"><br>
 </div>

@@ -3,6 +3,8 @@ session_start();
 if  (isset($_SESSION['islogin'])){
 }
 else header('Location:0-login.php');
+
+$page="index.php";
 ?>
 
 <html>

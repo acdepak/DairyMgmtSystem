@@ -8,6 +8,8 @@ else
     {
         header("location:0-login.php");
     }
+
+    $page="4-invoice.php";
 ?>
 
 <!DOCTYPE html>

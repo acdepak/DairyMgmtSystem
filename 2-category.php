@@ -4,7 +4,6 @@ $password="";
 $host="localhost";
 $db_name="dairymgmtsystem";
 
-
 $mysqli=new mysqli($host,$username,$password,$db_name);
 
 if ($mysqli->connect_error) {
@@ -15,10 +14,8 @@ $sql = "SELECT * FROM category";
 $result = $mysqli->query($sql);
 $mysqli->close();
 
-
+$page="2-category.php";
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,44 +27,44 @@ $mysqli->close();
     <link rel="stylesheet" href="./style/2-category.css">
 </head>
 <body>
-<div class="menu">
-            <?php include 'nav.php';?>
-        </div>
-    <div class="container" style=" display: flex; justify-content: center; ">
-    <div>
-        <table class="tbl1">
-            <tr>
-                <th>SN</th>
-                <th>Categories</th>
-                <th>Quantity</th>
-                <th>Unit</th>
-                <th>Rate</th>
+    <div class="menu">
+        <?php include 'nav.php';?>
+    </div>
+    <div class="container">
+        <div>
+            <table class="tbl" border="1">
+                <tr>
+                    <th>SN</th>
+                    <th>Categories</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Rate</th>
                 </tr>
 
-                <?php while($row=$result->fetch_assoc()) {
-
-                ?><tr>
-                <td><?php echo $row['S.N.']; ?></td>
-                <td><?php echo $row['Categories']; ?></td>
-                <td><?php echo $row['Quantity']; ?></td>
-                <td><?php echo $row['Unit']; ?></td>
-                <td><?php echo $row['Rate']; ?></td>
+                    <?php while($row=$result->fetch_assoc()) {
+                    ?>
+                <tr>
+                    <td><?php echo $row['S.N.']; ?></td>
+                    <td><?php echo $row['Categories']; ?></td>
+                    <td><?php echo $row['Quantity']; ?></td>
+                    <td><?php echo $row['Unit']; ?></td>
+                    <td><?php echo $row['Rate']; ?></td>
                 </tr>
                 <?php 
-            } 
-            ?>
+                } 
+                ?>
             </table>
         </div>
-        <div id="divInsert" style="display: block">
-                    <p></p>
-                    <form action="2-category.php" method="post">
-                        <button type="submit" formaction="insert.php">Insert Category
-                        </button>
-                    </form>
-                    <!-- < ?php include 'insert.php';?> -->
-                        Update Delete
-                </div>
-                </div>
+        <div id="bottom">
+            <p></p>
+            <form action="2-category.php" method="post">
+                <button type="submit" formaction="insert.php">Insert Category
+                </button>
+            </form>
+                    <!-- <#?php include 'insert.php';?> -->
+                <div>Update</div> <div>Delete</div>
+        </div>
+    </div>
     
 </body>
 </html>

@@ -8,6 +8,7 @@ else
     {
         header("location:0-login.php");
     }
+    $page="3-bill.php";
 
     $conn=mysqli_connect("localhost","root","","dairymgmtsystem");
     if(!$conn)

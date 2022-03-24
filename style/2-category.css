@@ -1,4 +1,37 @@
 .container {
-  height: 80vh;
-  display: center;
+  font-family: verdana, arial;
+  display: flex;
+  justify-content: center;
+}
+
+.tbl {
+  /* margin-left: auto;// centers the table
+  margin-right: auto; */
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.tbl tr th {
+  padding: 8px;
+}
+
+.tbl tr td {
+  padding: 8px;
+}
+
+#bottom form,
+#bottom div {
+  display: block;
+  padding: 8px;
+}
+
+button {
+  background-color: #ffffff;
+  border: 1px 1px;
+  color: #000000;
+  padding: 8px 8px;
+  text-decoration: none;
+  font-family: Verdana, Arial, Helvet;
+  font-size: 16px;
+  cursor: pointer;
 }
