@@ -44,21 +44,20 @@ else
     }
 ?>
 
-<script>
-    label{
-        padding: 8px;
-    }
-</script>
+<link rel="stylesheet" href="./style/insert.css">
 
 <div class="menu">
                 <?php include 'nav.php';?>
             </div>
 <div id="insert">
     <form action="insert.php" method="post">
-        <label>Category: <input type="text" name="tcata" value="<?php echo $category; ?>"></label><br>
-        <label>Quantity: <input type="text" name="tquan" value="<?php echo $quantity; ?>"></label><br>
-        <label>Unit: <input type="text" name="tunit" value="<?php echo $unit;?>"></label><br>
-        <label>Rate: <input type="text" name="trate" value="<?php echo $rate;?>"></label><br>
-        <label>Action: <input type="text" name="tact" value="<?php echo $action;?>"></label><br>
-        <input type="submit" name="btninsert" value="Insert"><br>
+        <label>Category: </label><input type="text" name="tcata" value="<?php echo $category; ?>"><br>
+        <label>Quantity: </label><input type="text" name="tquan" value="<?php echo $quantity; ?>"><br>
+        <label>Unit: </label><input type="text" name="tunit" value="<?php echo $unit;?>"><br>
+        <label>Rate: </label><input type="text" name="trate" value="<?php echo $rate;?>"><br>
+        <label>Action: </label><input type="text" name="tact" value="<?php echo $action;?>"><br>
+        <input class="btn" type="submit" name="btninsert" value="Insert"><br>
+    </form>
 </div>
+<input class="btn" type="submit" name="btnupdate" value="Update"><br>
+<input class="btn" type="submit" name="btndelete" value="Delete"><br>
