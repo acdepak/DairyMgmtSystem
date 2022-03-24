@@ -70,7 +70,7 @@ else
 <!DOCTYPE html>
 <html>
     <head><title>BillPage</title></head>
-    <link rel="stylesheet" href="./style/bill.css"
+    <link rel="stylesheet" href="./style/bill.css">
     <body>
         <div id="div5">
             <div class="menu">
