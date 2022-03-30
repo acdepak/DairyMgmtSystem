@@ -3,19 +3,23 @@ $username="root";
 $password="";
 $host="localhost";
 $db_name="dairymgmtsystem";
+
 //create connection
 $mysqli=new mysqli($host,$username,$password,$db_name);
+
 //check connection
 if ($mysqli->connect_error) {
   echo "Failed to connect to MySQL: " . $mysqli->connect_error;
 }
+
+$page="2-category.php";
 include_once 'nav.php';
 
 $sql = "SELECT * FROM category";
 $result = $mysqli->query($sql);
 $mysqli->close();
 
-$page="2-category.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +32,10 @@ $page="2-category.php";
     <link rel="stylesheet" href="./style/2-category.css">
 </head>
 <body>
-    <!-- <div class="menu">
-        <#?php include 'nav.php';?>
-    </div> -->
+
     <div class="container">
         <div>
+            <?php if(mysqli_num_rows($result)>0){ ?>
             <table class="tbl" border="1">
                 <tr>
                     <th>SN</th>
@@ -44,7 +47,7 @@ $page="2-category.php";
                 </tr>
 
                     <?php 
-                    // $i=0;
+                    $i=0;
                     while($row=$result->fetch_assoc()) {
                     ?>
                 <tr>
@@ -53,14 +56,15 @@ $page="2-category.php";
                     <td><?php echo $row['Quantity']; ?></td>
                     <td><?php echo $row['Unit']; ?></td>
                     <td><?php echo $row['Rate']; ?></td>
-                    <td><a href="update-process.php?sn=<?php echo $row['SN']; ?>">Update</a></td>
-                    <td><a href="#">Delete</a></td>
+                    <td><a href="update-process.php?SN=<?php echo $row['SN']; ?>">Update</a></td>
+                    <td><a href="<?php echo $row['SN'];?>">Delete</a></td>
                 </tr>
                 <?php 
-                // $i++;
+                $i++;
                 } 
                 ?>
             </table>
+            <?php } else { echo "No result found"; } ?>
         </div>
         <div id="bottom">
             <p></p>
