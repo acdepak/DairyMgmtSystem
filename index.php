@@ -5,6 +5,7 @@ if  (isset($_SESSION['islogin'])){
 else header('Location:0-login.php');
 
 $page="index.php";
+include_once 'nav.php';
 ?>
 
 <html>
@@ -13,8 +14,8 @@ $page="index.php";
         <link rel="stylesheet" href="./style/dashboard.css" />
     </head>
     <body>
-        <div class="menu">
-            <?php include 'nav.php';?>
-        </div>
+    <center style=" padding-top:20%;  font-family: 'Helvetica Neue',Helvetica; font-weight: bold; font-size: 2em">
+        Dashboard
+    </center>
     </body>
 </html>

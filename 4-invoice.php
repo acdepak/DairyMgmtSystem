@@ -25,7 +25,7 @@ else
             <h2>Invoice</h2>
             <div id="inv2">
                 <div id="inv3">
-                <table id="invoicetable">
+                    <table id="invoicetable">
                         <tr>
                             <th>#</th>
                             <th>Date</th>
@@ -47,9 +47,7 @@ else
                             <td>Pull Price</td>
                         </tr>
                     </table>
-                    
-
-                </div>
+                 </div>
             </div>
         </div>
     </body>
