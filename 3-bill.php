@@ -53,7 +53,7 @@ else
                 die("Error occured in connection to database");
                 return;
             }
-            $query="INSERT INTO `invoice` (`S.N.`, `Date`, `Customer Name`, 
+            $query="INSERT INTO `invoice` (`SN`, `Date`, `Customer Name`, 
             `Product`, `Quantiry`, `Rate`, `Price`, `Username`) VALUES (NULL, '$date', 
             '$name', '$product', '$quantity', '$rate', '$price', '$uname');";
         if(mysqli_query($conn,$query))

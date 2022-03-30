@@ -6,7 +6,7 @@ if(isset($_SESSION["islogin"]))
     }
 else
     {
-        header("location:1-login.php");
+        header("location:0-login.php");
     }
     $sn="";
     $category="";
@@ -30,7 +30,7 @@ else
                 die("Error occured in connecting to database");
                 return;
             }
-                $query="INSERT INTO `category` (`S.N.`, `Categories`, `Quantity`, `Unit`, `Rate`, `Action`) 
+                $query="INSERT INTO `category` (`SN`, `Categories`, `Quantity`, `Unit`, `Rate`, `Action`) 
                 VALUES (NULL, '$category', '$quantity', '$unit', '$rate', '$action');"; 
                 // echo $query;
             if(mysqli_query($conn,$query))
@@ -55,7 +55,7 @@ else
         <label>Quantity: </label><input type="text" name="tquan" value="<?php echo $quantity; ?>"><br>
         <label>Unit: </label><input type="text" name="tunit" value="<?php echo $unit;?>"><br>
         <label>Rate: </label><input type="text" name="trate" value="<?php echo $rate;?>"><br>
-        <label>Action: </label><input type="text" name="tact" value="<?php echo $action;?>"><br>
+        <!-- <label>Action: </label><input type="text" name="tact" value="<#?php echo $action;?>"><br> -->
         <input class="btn" type="submit" name="btninsert" value="Insert"><br>
     </form>
 </div>

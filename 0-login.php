@@ -32,7 +32,7 @@ if(isset($_POST["loginbtn"]))
                     <form action="0-login.php" method="post">
                         <p><input type="text" name="username" placeholder="Username"></p>
                         <p><input type="password" name="password1" placeholder="Password"></p>
-                        <input type="submit" name="loginbtn" value="Login">
+                        <input id="button" type="submit" name="loginbtn" value="Login">
 
                     </form>
                 </div>

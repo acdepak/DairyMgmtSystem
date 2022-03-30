@@ -3,9 +3,9 @@ $username="root";
 $password="";
 $host="localhost";
 $db_name="dairymgmtsystem";
-
+//create connection
 $mysqli=new mysqli($host,$username,$password,$db_name);
-
+//check connection
 if ($mysqli->connect_error) {
   echo "Failed to connect to MySQL: " . $mysqli->connect_error;
 }
@@ -39,30 +39,38 @@ $page="2-category.php";
                     <th>Quantity</th>
                     <th>Unit</th>
                     <th>Rate</th>
+                    <th>Action</th>
                 </tr>
 
-                    <?php while($row=$result->fetch_assoc()) {
+                    <?php 
+                    $i=0;
+                    while($row=$result->fetch_assoc()) {
                     ?>
                 <tr>
-                    <td><?php echo $row['S.N.']; ?></td>
+                    <td><?php echo $row['SN']; ?></td>
                     <td><?php echo $row['Categories']; ?></td>
                     <td><?php echo $row['Quantity']; ?></td>
                     <td><?php echo $row['Unit']; ?></td>
                     <td><?php echo $row['Rate']; ?></td>
+                    <td><a href="update-process.php?sn=<?php echo $row['SN']; ?>">Update</a></td>
                 </tr>
                 <?php 
+                $i++;
                 } 
                 ?>
             </table>
         </div>
         <div id="bottom">
             <p></p>
-            <form action="2-category.php" method="post">
-                <button type="submit" formaction="insert.php">Insert Category
-                </button>
+            <form method="post">
+                <button type="submit" formaction="insert.php">Insert Category</button>
             </form>
-                    <!-- <#?php include 'insert.php';?> -->
-                <div>Update</div> <div>Delete</div>
+            
+                <!-- <form method="post">
+                <button type="submit" formaction="update.php">Update Category</button>
+                </form> -->
+            
+            Delete
         </div>
     </div>
     

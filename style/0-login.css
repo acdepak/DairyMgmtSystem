@@ -2,6 +2,7 @@
   text-align: center;
   background-color: rgb(255, 255, 255);
   width: 100%;
+  font-family: Verdana;
 }
 
 #div2 {
@@ -14,12 +15,31 @@
 }
 
 #div3 {
-  background-color: rgb(224, 224, 224);
+  background-color: skyblue;
   position: relative;
   left: 25%;
+  right: 25%;
   width: 50%;
 }
-
+#div3 h3 {
+  font-size: 25px;
+  font-family: sans-serif;
+}
 #div4 {
-  background-color: rgb(224, 224, 224);
+  background-color: skyblue;
+}
+
+#div4 p input {
+  font-family: verdana;
+  padding: 10px;
+  border: none;
+}
+#button {
+  font-family: verdana;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px 1px;
+  padding: 7px 10px;
 }
