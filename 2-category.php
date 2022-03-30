@@ -9,6 +9,7 @@ $mysqli=new mysqli($host,$username,$password,$db_name);
 if ($mysqli->connect_error) {
   echo "Failed to connect to MySQL: " . $mysqli->connect_error;
 }
+include_once 'nav.php';
 
 $sql = "SELECT * FROM category";
 $result = $mysqli->query($sql);
@@ -27,9 +28,9 @@ $page="2-category.php";
     <link rel="stylesheet" href="./style/2-category.css">
 </head>
 <body>
-    <div class="menu">
-        <?php include 'nav.php';?>
-    </div>
+    <!-- <div class="menu">
+        <#?php include 'nav.php';?>
+    </div> -->
     <div class="container">
         <div>
             <table class="tbl" border="1">
@@ -39,11 +40,11 @@ $page="2-category.php";
                     <th>Quantity</th>
                     <th>Unit</th>
                     <th>Rate</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </tr>
 
                     <?php 
-                    $i=0;
+                    // $i=0;
                     while($row=$result->fetch_assoc()) {
                     ?>
                 <tr>
@@ -53,9 +54,10 @@ $page="2-category.php";
                     <td><?php echo $row['Unit']; ?></td>
                     <td><?php echo $row['Rate']; ?></td>
                     <td><a href="update-process.php?sn=<?php echo $row['SN']; ?>">Update</a></td>
+                    <td><a href="#">Delete</a></td>
                 </tr>
                 <?php 
-                $i++;
+                // $i++;
                 } 
                 ?>
             </table>
@@ -65,12 +67,6 @@ $page="2-category.php";
             <form method="post">
                 <button type="submit" formaction="insert.php">Insert Category</button>
             </form>
-            
-                <!-- <form method="post">
-                <button type="submit" formaction="update.php">Update Category</button>
-                </form> -->
-            
-            Delete
         </div>
     </div>
     
