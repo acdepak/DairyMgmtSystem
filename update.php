@@ -1,19 +1,14 @@
 <?php 
-$conn=mysqli_connect("localhost","root","","dairymgmtsystem");
-if(!$conn)
-{
-    die("Error occured in connecting to database");
-    return;
-}
+include_once 'session.php';
 include_once 'nav.php';
 
 if(count($_POST)>0) {
-    mysqli_query($conn,"UPDATE category set SN='" . $_POST['SN'] . "', category='" . $_POST['category'] . "',
+    mysqli_query($mysqli,"UPDATE category set SN='" . $_POST['SN'] . "', category='" . $_POST['category'] . "',
         quantity='" . $_POST['quantity'] . "', unit='" . $_POST['unit'] . "' ,
         rate='" . $_POST['rate'] . "' WHERE SN='" . $_POST['SN'] . "'");
     $message = "Record Modified Successfully";
 }
-$result = mysqli_query($conn,"SELECT * FROM category WHERE SN='" . $_GET['SN'] . "'");
+$result = mysqli_query($mysqli,"SELECT * FROM category WHERE SN='" . $_GET['SN'] . "'");
 $row= mysqli_fetch_array($result);
 ?>
 <html>
@@ -23,9 +18,6 @@ $row= mysqli_fetch_array($result);
     <body>
         <form name="frmUser" method="post" action="">
             <div><?php if(isset($message)) { echo $message; } ?>
-            </div>
-            <div style="padding-bottom:5px;">
-                <a href="2-category.php">Category List</a>
             </div>
 
             <label>S.N.: </label>

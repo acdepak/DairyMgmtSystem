@@ -1,17 +1,5 @@
 <?php
-$username="root";
-$password="";
-$host="localhost";
-$db_name="dairymgmtsystem";
-
-//create connection
-$mysqli=new mysqli($host,$username,$password,$db_name);
-
-//check connection
-if ($mysqli->connect_error) {
-  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-}
-
+include_once 'session.php';
 $page="2-category.php";
 include_once 'nav.php';
 
@@ -56,8 +44,8 @@ $mysqli->close();
                     <td><?php echo $row['Quantity']; ?></td>
                     <td><?php echo $row['Unit']; ?></td>
                     <td><?php echo $row['Rate']; ?></td>
-                    <td><a href="update-process.php?SN=<?php echo $row['SN']; ?>">Update</a></td>
-                    <td><a href="<?php echo $row['SN'];?>">Delete</a></td>
+                    <td><a href="update.php?SN=<?php echo $row['SN']; ?>">Update</a></td>
+                    <td><a href="delete.php?SN=<?php echo $row['SN'];?>">Delete</a></td>
                 </tr>
                 <?php 
                 $i++;

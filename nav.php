@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head><title>torture</title>
+    <head><title>Dairy System</title>
     </head>
         <link rel="stylesheet" href="./style/nav.css">
     <body>

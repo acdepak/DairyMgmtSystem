@@ -1,15 +1,7 @@
 <?php
-session_start();
-if(isset($_SESSION["islogin"]))
-    {
-
-    }
-else
-    {
-        header("location:0-login.php");
-    }
-
-    $page="4-invoice.php";
+include_once 'session.php';
+$page="4-invoice.php";
+include_once 'nav.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +11,6 @@ else
     </head>
     <body>
         <div id="inv1">
-            <div class="menu">
-                <?php include 'nav.php';?>
-            </div>
             <h2>Invoice</h2>
             <div id="inv2">
                 <div id="inv3">

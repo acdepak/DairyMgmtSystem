@@ -1,24 +1,12 @@
 <?php
-session_start();
-if(isset($_POST["loginbtn"]))
-{
-    if($_POST["username"]=="admin" && $_POST["password1"]=="password")
-    {
-        $_SESSION["islogin"]=true;
-        header("location:index.php");
-    }
-    else
-    {
-        echo("Please enter valid username and password.");
-    }
-}
+include_once 'session.php';
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>Login Page</title>
-        <link rel="stylesheet" href="./style/0-login.css" />
+        <link rel="stylesheet" href="./style/login.css" />
     </head>
     <body>
         <div id="div1">

@@ -1,24 +1,13 @@
 <?php
-session_start();
-if(isset($_SESSION["islogin"]))
-    {
+include_once 'session.php';
+$page="3-bill.php";
 
-    }
-else
-    {
-        header("location:0-login.php");
-    }
-    $page="3-bill.php";
+$sql="select * from category";
+// $conn=$mysqli;
+$result = $mysqli->query($sql);
+$mysqli->close();
 
-    $conn=mysqli_connect("localhost","root","","dairymgmtsystem");
-    if(!$conn)
-        {
-            die("Error occured in connecting to database");
-            return;
-        }
-    $query="select * from category";
-    $result=mysqli_query($conn,$query);
-    if (mysqli_num_rows($result)>0)
+if (mysqli_num_rows($result)>0)
     {
         while($row=mysqli_fetch_assoc($result))
         {
@@ -46,17 +35,17 @@ else
         $price=$_POST[""];
         $uname=$_POST[""];
 
-        $conn=mysqli_connect("localhost","root","","dairymgmtsystem");
+        $mysqli=mysqli_connect("localhost","root","","dairymgmtsystem");
 
-        if(!$conn)
+        if(!$mysqli)
             {
                 die("Error occured in connection to database");
                 return;
             }
-            $query="INSERT INTO `invoice` (`SN`, `Date`, `Customer Name`, 
+            $sql="INSERT INTO `invoice` (`SN`, `Date`, `Customer Name`, 
             `Product`, `Quantiry`, `Rate`, `Price`, `Username`) VALUES (NULL, '$date', 
             '$name', '$product', '$quantity', '$rate', '$price', '$uname');";
-        if(mysqli_query($conn,$query))
+        if(mysqli_query($mysqli,$sql))
         {
             echo("Data Saved");
         }
