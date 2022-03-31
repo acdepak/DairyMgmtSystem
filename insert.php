@@ -53,10 +53,15 @@ else
         <label>Category: </label><input type="text" name="tcata" value="<?php echo $category; ?>"><br>
         <label>Quantity: </label><input type="text" name="tquan" value="<?php echo $quantity; ?>"><br>
 
-        <label>Unit: </label>
-        <input type="text" name="tunit" value="<?php echo $unit;?>"><br>
-
+        <label>Unit: </label><input type="text" name="tunit" list="tunit" value="<?php echo $unit;?>"><br>
         <label>Rate: </label><input type="text" name="trate" value="<?php echo $rate;?>"><br>
         <input class="btn" type="submit" name="btninsert" value="Insert"><br>
+        <datalist id="tunit">
+            <option value="KG">
+            <option value="Liter">
+            <option value="Piece">
+            <option value="Dozen">
+            <!-- https://www.youtube.com/watch?v=oqwpnlYndDM -->
+        </datalist>
     </form>
 </div>
