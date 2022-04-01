@@ -17,8 +17,10 @@ $row= mysqli_fetch_array($result);
     <head>
         <title>Update</title>
     </head>
+    <link rel="stylesheet" href="./style/bill.css">
     <body>
-        <form name="frmUser" method="post" action="">
+        <p id="upd">Update Categories</p>
+        <form name="frmUser" method="post" action="" class="inputfield">
             <div><?php if(isset($message)) { echo $message; } ?>
             </div>
 

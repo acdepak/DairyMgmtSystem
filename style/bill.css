@@ -8,12 +8,18 @@
 }
 
 .inputfield input {
+  font-family: Verdana;
   padding: 3px;
   margin: 2px;
 }
 
 .inputfield label {
+  font-family: Verdana;
   width: 150px;
   display: inline-block;
   text-align: left;
+}
+#upd {
+  font-family: Verdana;
+  text-align: center;
 }
