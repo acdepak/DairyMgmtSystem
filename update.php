@@ -2,10 +2,12 @@
 include_once 'session.php';
 include_once 'nav.php';
 
+$Unit=""; $Categories=""; $Quantity=""; $Rate="";
+
 if(count($_POST)>0) {
-    mysqli_query($mysqli,"UPDATE category set SN='" . $_POST['SN'] . "', category='" . $_POST['category'] . "',
-        quantity='" . $_POST['quantity'] . "', unit='" . $_POST['unit'] . "' ,
-        rate='" . $_POST['rate'] . "' WHERE SN='" . $_POST['SN'] . "'");
+    mysqli_query($mysqli,"UPDATE category set SN='" . $_POST['SN'] . "', Categories='" . $_POST['Categories'] . "',
+        Quantity='" . $_POST['Quantity'] . "', Unit='" . $_POST['Unit'] . "' ,
+        Rate='" . $_POST['Rate'] . "' WHERE SN='" . $_POST['SN'] . "'");
     $message = "Record Modified Successfully";
 }
 $result = mysqli_query($mysqli,"SELECT * FROM category WHERE SN='" . $_GET['SN'] . "'");
@@ -25,16 +27,17 @@ $row= mysqli_fetch_array($result);
             <input type="text" name="SN" value="<?php echo $row['SN']; ?>">
             <br>
             <label>Category: </label>
-            <input type="text" name="category" class="txtField" value="<?php echo $row['category']; ?>"><br>
-
+            <input type="text" name="Categories" class="txtField" value="<?php echo $row['Categories']; ?>">
+            <br>
             <label>Quantity: </label>
-            <input type="text" name="quantity" class="txtField" value="<?php echo $row['quantity']; ?>"><br>
-
+            <input type="text" name="Quantity" class="txtField" value="<?php echo $row['Quantity']; ?>">
+            <br>
             <label>Unit: </label>
-            <input type="text" name="unit" class="txtField" value="<?php echo $row['unit'];?>"><br>
-
+            <input type="text" name="Unit" class="txtField" value="<?php echo $row['Unit'];?>">
+            <br>
             <label>Rate: </label>
-            <input type="text" name="rate" class="txtField" value="<?php echo $row['rate'];?>"><br>
+            <input type="text" name="Rate" class="txtField" value="<?php echo $row['Rate'];?>">
+            <br>
             <input class="btn" type="submit" name="submit" value="Update"><br>
              </form>
     </body>
