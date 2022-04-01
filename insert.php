@@ -61,6 +61,7 @@ else
             <option value="Liter">
             <option value="Piece">
             <option value="Dozen">
+            <option value="Pack">
             <!-- https://www.youtube.com/watch?v=oqwpnlYndDM -->
         </datalist>
     </form>

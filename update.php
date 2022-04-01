@@ -33,8 +33,15 @@ $row= mysqli_fetch_array($result);
             <input type="text" name="Quantity" class="txtField" value="<?php echo $row['Quantity']; ?>">
             <br>
             <label>Unit: </label>
-            <input type="text" name="Unit" class="txtField" value="<?php echo $row['Unit'];?>">
+            <input type="text" name="Unit" class="txtField" list="tunit" value="<?php echo $row['Unit'];?>">
             <br>
+            <datalist id="tunit">
+                <option value="KG">
+                <option value="Liter">
+                <option value="Piece">
+                <option value="Dozen">
+                <option value="Pack">
+            </datalist>
             <label>Rate: </label>
             <input type="text" name="Rate" class="txtField" value="<?php echo $row['Rate'];?>">
             <br>
@@ -42,3 +49,7 @@ $row= mysqli_fetch_array($result);
              </form>
     </body>
 </html>
+
+
+      
+        
