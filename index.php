@@ -1,9 +1,5 @@
 <?php
-session_start();
-if  (isset($_SESSION['islogin'])){
-}
-else header('Location:0-login.php');
-
+include_once 'session.php';
 $page="index.php";
 include_once 'nav.php';
 ?>

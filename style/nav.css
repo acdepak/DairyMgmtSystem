@@ -28,7 +28,7 @@ ul.topnav li a {
   padding: 14px 16px;
   text-decoration: none; /* removes all decoreations*/
 }
-.rnav li .active {
+.active {
   background-color: rgb(167, 73, 49);
 }
 /* ul.topnav li a:hover:not(.active) {background-color: #111;}

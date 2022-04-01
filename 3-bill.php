@@ -1,6 +1,7 @@
 <?php
 include_once 'session.php';
 $page="3-bill.php";
+include_once 'nav.php';
 
 $sql="select * from category";
 // $conn=$mysqli;
@@ -61,10 +62,6 @@ if (mysqli_num_rows($result)>0)
     <head><title>BillPage</title></head>
     <link rel="stylesheet" href="./style/bill.css">
     <body>
-        <div id="div5">
-            <div class="menu">
-                <?php include 'nav.php';?>
-            </div>
             <div id="div6">
                 <h2>Dairy Management System</h2>
             </div>
