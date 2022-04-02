@@ -29,14 +29,7 @@ $row= mysqli_fetch_array($result);
             <input type="text" name="SN" value="<?php echo $row['SN']; ?>">
             <br>
             <label>Category: </label>
-            <input type="text" name="Categories" class="txtField" list="category"value="<?php echo $row['Categories']; ?>">
-            <datalist id="category">
-                <option value="Milk">
-                <option value="Butter">
-                <option value="Yogurt">
-                <option value="Ghee">
-                <option value="Kurauni">
-            </datalist>
+            <input type="text" name="Categories" class="txtField" value="<?php echo $row['Categories']; ?>">
             <br>
             <label>Quantity: </label>
             <input type="text" name="Quantity" class="txtField" value="<?php echo $row['Quantity']; ?>">
