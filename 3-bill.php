@@ -3,54 +3,24 @@
     $page="3-bill.php";
     include_once 'nav.php';
 
-    // $sql="select * from category";
-
-    $Categories = $_REQUEST['Categories'];
-    
-    if($Categories !== ""){
-        $query = mysqli_query($mysqli,"SELECT Unit, Rate FROM category WHERE Categories ='" . $_REQUEST['Categories'] . "'");
-        
-        $row = mysqli_fetch_array($query);
-            $Unit = $row["Unit"];
-            $Rate = $row["Rate"];        
-    }
-
-    $result = array("$Unit", "$Rate");
-    $myJSON = json_encode($result);
-    echo $myJSON;
-
-    $price="  !!! JS to price";
+    $price="";
     $date=date("Y-m-d");
-    $name="";
-    $quantity="";
-    $uname=""; $unit=""; $rate=""; 
+    $c_name="";    $quantity="";    $uname="";
     $Categories="";
-    // $result0= mysqli_query($mysqli,$sql); 
-        // while($row= mysqli_fetch_array($result0))
-        //     {
-        //         $product=$product."<option>$row[1]</option>";
-        //         $unit=$unit."<option>$row[3]</option>";
-        //         $rate=$rate."<option>$row[4]</option>";
-        //     }
-            
-        // $result1= mysqli_query($mysqli,$sql); 
-        // while($row= mysqli_fetch_array($result1))
-        //     {
-        //         $unit=$unit."<option>$row[3]</option>";
-        //     }
-
-        // $result2= mysqli_query($mysqli,$sql); 
-        // while($row= mysqli_fetch_array($result2))
-        //     {
-        //         $rate=$rate."<option>$row[4]</option>";
-        //     }
+    $Unit="";       $Rate="";
     
-    
+if(isset($_GET['button'])) {
+    $c_name=$_GET['c_name'];    $quantity=$_GET['qty'];
+    $Categories=$_GET['Categories'];    $Unit=$_GET['Unit'];
+    $Rate=$_GET['Rate'];
+}
+  
 ?>
 
 <!DOCTYPE html>
 <html>
     <head><title>BillPage</title>
+    <script src="jquery-3.6.0.min.js"></script>
 </head>
     <link rel="stylesheet" href="./style/bill.css">
     <body>
@@ -62,53 +32,38 @@
                     <h3>Billing</h3>
                 </div>
                     <div id="div8">
-                        <form class='inputfield'>
+                        <form class='inputfield' action="3-bill.php" method="get">
                             <label>Date :</label><input style="border:hidden;" disabled name="date" value="<?php echo $date; ?>"><br>
-                            <label>Customer name: </label><input syle=""type="text" name="name" value="<?php echo $name; ?>" placeholder="Name..."><br>
+                            <label>Customer name: </label>
+                            <input syle=""type="text" name="c_name" value="<?php echo $c_name; ?>" placeholder="Name..."><br>
                             
                             <label>Product: </label>
-                            <input type='text' name="Categories" id="Categories" placeholder='Enter Product' 
-                                onkeyup="GetDetail(this.value)" value="">
-                            <!-- <select>< ?php echo $Categories; ?></select> -->
+                            <input type='text' name="Categories" id="Categories" value="<?php echo $Categories; ?>">
+                                                                
                             <br>
-
-                            <label>Quantity: </label><input type="number" name="qty" value="<?php echo $quantity; ?>"><br>
-
                             <label>Unit: </label>
-                            <input type="text" name="Unit" id="Unit" value="">
-                            <!-- <select>< ?php echo $unit; ?></select> -->
-                            <br>
+                            <input type="text" name="Unit" id="Unit" value="<?php echo $Unit; ?>">
                             
-                            <label>Rate: </label>
-                            <input type="text" name="Rate" id="Rate" value="">
-                            <!-- <select>< ?php echo $rate; ?></select> -->
                             <br>
-                            <label>Price: </label><input disabled name="price" value="<?php echo ($price); ?>"><br>
-                            <label>User: </label><input type="text" name="user" value="<?php echo $uname; ?>" placeholder="Username...">
+                            <label>Rate: </label>
+                            <input type="text" name="Rate" id="Rate" value="<?php echo $Rate; ?>">
+                            
+                            <br>
+                            <label>Quantity: </label>
+                            <input type="text" name="qty" value="<?php echo $quantity; ?>"
+                            id="qty" onkeyup="myFunction()"><br>
+                            <label>Price: </label>
+                            <input type="text" name="price" id="price" value="<?php echo ($price); ?>"><br>
+                            <input type="submit" name="button" value="Submit"><br>
                         </form>
                     </div>
             </div>
-            <script>
-                function GetDetail(str){
-                    if(str.length==0){
-                        document.getElementById("Unit").value="";
-                        document.getElementById("Rate").value="";
-                        return;
-                    }
-                    else {
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                var myObj = JSON.parse(this.responseText);
-                                document.getElementById("Unit").value = myObj[0];
-                                document.getElementById("Rate").value = myObj[1];
-
-                            }
-                        };
-                        xmlhttp.open("GET","retrive.php?Categories=" + str, true);
-                        xmlhttp.send();
-                    }
-                }
-            </script>
+        <script>
+            function myFunction(){
+                var rate = document.getElementById("Rate").value;
+                var qty = document.getElementById("qty").value;
+                document.getElementById("price").value= "Rs." + (Number(rate)*Number(qty));
+            }
+        </script>    
     </body>
 </html>
