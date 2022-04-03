@@ -7,7 +7,6 @@
     $quantity="";
     $unit="";
     $rate="";
-    $action="";
     if(isset($_POST["btninsert"]))
     {
         $id=[""];
@@ -17,10 +16,10 @@
         $rate=$_POST["trate"];
 
 // sql query to insert a new category into category table
-        $query="INSERT INTO `category` (`SN`, `Categories`, `Quantity`, `Unit`, `Rate`, `Action`) 
-        VALUES (NULL, '$category', '$quantity', '$unit', '$rate', '$action');"; 
+        $query="INSERT INTO `category` (`SN`, `Categories`, `Quantity`, `Unit`, `Rate`) 
+        VALUES (NULL, '$category', '$quantity', '$unit', '$rate');"; 
         
-        if(mysqli_query($conn,$query))
+        if(mysqli_query($mysqli,$query))
         {
             echo("Data Saved");
         }
