@@ -11,7 +11,7 @@
                   <li class="<?php if($page=="index.php"){ ?> active <?php } ?> "><a href="index.php" >Dashboard</a></li>
                   <li class="<?php if($page=="2-category.php"){ ?> active <?php } ?> "><a href="2-category.php">Category</a></li>
                   <li class="<?php if($page=="4-invoice.php"){ ?> active <?php } ?> "><a href="4-invoice.php">Invoice</a></li>
-                  <li class="<?php if($page=="3-bill.php"){ ?> active <?php } ?> "><a href="3-bill.php">Bill</a></li> 
+                  <li class="<?php if($page=="retrive.php"){ ?> active <?php } ?> "><a href="retrive.php">Bill</a></li> 
                   <!--  Current page detection and changing color in it's name -->
               </div>
               <div class="lnav">
