@@ -3,6 +3,7 @@ include_once 'session.php';
 include_once 'nav.php';
 
 $Unit=""; $Categories=""; $Quantity=""; $Rate="";
+
 // checks if anything is inputted into field then only uses update query
 if(count($_POST)>0) {
     mysqli_query($mysqli,"UPDATE category set SN='" . $_POST['SN'] . "', Categories='" . $_POST['Categories'] . "',
@@ -13,6 +14,7 @@ if(count($_POST)>0) {
 $result = mysqli_query($mysqli,"SELECT * FROM category WHERE SN='" . $_GET['SN'] . "'");
 $row= mysqli_fetch_array($result);
 ?>
+
 <html>
     <head>
         <title>Update</title>
