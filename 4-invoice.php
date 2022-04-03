@@ -2,40 +2,60 @@
 include_once 'session.php';
 $page="4-invoice.php";
 include_once 'nav.php';
+
+$result=mysqli_query($mysqli,"SELECT * FROM invoice");
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>invoices</title>
+        <title>Invoice</title>
     </head>
     <body>
         <div id="inv1">
             <h2>Invoice</h2>
             <div id="inv2">
                 <div id="inv3">
+                    <?php 
+                    if(mysqli_num_rows($result) > 0) {
+                    ?>
                     <table id="invoicetable">
                         <tr>
                             <th>#</th>
                             <th>Date</th>
-                            <th>Customer name</th>
+                            <th>Customer</th>
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Rate</th>
                             <th>Price</th>
-                            
+                            <th>Username</th>
                         </tr>
-                        <!-- https://www.c-sharpcorner.com/UploadFile/051e29/dropdown-list-in-php/ -->
+                        <?php
+                        $i=0;
+                        while($row= mysqli_fetch_array($result)) {
+                        ?>
                         <tr>
-                            <td>pull #</td>
-                            <td>pull date</td>
-                            <td>pull name</td>
-                            <td>pull prd</td>
-                            <td>pull qty</td>
-                            <td>pull rate</td>
-                            <td>Pull Price</td>
+                            <td><?php echo $row['SN']; ?></td>
+                            <td><?php echo $row['Date']; ?></td>
+                            <td><?php echo $row['Customer']; ?></td>
+                            <td><?php echo $row['Product']; ?></td>
+                            <td><?php echo $row['Quantity']; ?></td>
+                            <td><?php echo $row['Rate']; ?></td>
+                            <td><?php echo $row['Price']; ?></td>
+                            <td><?php echo $row['Username']; ?></td>
                         </tr>
+                        <?php
+                        $i++;
+                        }
+                        ?>
                     </table>
+                    <?php
+                    }
+                        else 
+                            { 
+                                echo"No result found";
+                            }
+                    ?>
                  </div>
             </div>
         </div>
