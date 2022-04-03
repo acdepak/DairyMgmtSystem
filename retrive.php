@@ -1,5 +1,6 @@
 <?php
 include_once 'session.php';
+$page="retrive.php";
 include_once 'nav.php';
 
 $result = mysqli_query($mysqli,"SELECT * FROM category");
@@ -22,6 +23,7 @@ $result = mysqli_query($mysqli,"SELECT * FROM category");
         <td>Quantity</td>
         <td>Unit</td>
         <td>Rate</td>
+        <td>Make Bill</td>
       </tr>
             <?php
             $i=0;
@@ -33,6 +35,7 @@ $result = mysqli_query($mysqli,"SELECT * FROM category");
         <td><?php echo $row['Quantity']; ?></td>
         <td><?php echo $row['Unit']; ?></td>
         <td><?php echo $row['Rate']; ?></td>
+        <td><a href="3-bill.php?Categories=<?php echo $row['Categories']; ?>">Bill</a></td>
       </tr>
             <?php
             $i++;
